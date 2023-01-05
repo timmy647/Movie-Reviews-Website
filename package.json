@@ -10,7 +10,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^15.0.0",
+    "@angular/animations": "^15.0.4",
     "@angular/common": "^15.0.0",
     "@angular/compiler": "^15.0.0",
     "@angular/core": "^15.0.0",
@@ -18,7 +18,12 @@
     "@angular/platform-browser": "^15.0.0",
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
+    "css": "^3.0.0",
+    "primeflex": "^3.3.0",
+    "primeicons": "^6.0.1",
+    "primeng": "^14.2.3",
     "rxjs": "~7.5.0",
+    "scss": "^0.2.4",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },

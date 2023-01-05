@@ -1,0 +1,20 @@
+<ng-container *ngIf="itemData">
+  <a class="movie-item" [routerLink]="'/movie/' + itemData.id">
+    <div class="movie-item-rating">
+      <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,100,1,200"
+        rel="stylesheet"
+      />
+      <span class="material-symbols-outlined">star</span>
+      <span>{{ itemData.vote_average }}</span
+      ><span>/10</span>
+    </div>
+    <div class="movie-item-image">
+      <img
+        [src]="imagesSize.medium + itemData.poster_path"
+        [alt]="itemData.title"
+      />
+    </div>
+    <div class="movie-item-title">{{ itemData.title }}</div>
+  </a>
+</ng-container>

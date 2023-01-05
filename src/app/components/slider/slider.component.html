@@ -1,0 +1,35 @@
+<!-- {{ items | json }} -->
+<div class="slider">
+  <ng-container *ngFor="let item of items; let i = index">
+    <div class="slider" *ngIf="i == currentSlideIndex" @slideFade>
+      <div class="slider-bg">
+        <img
+          class="slider-bg-image"
+          [src]="imagesSizes.large + item.backdrop_path"
+          alt=""
+        />
+        <div class="slider-pane">
+          <h2 class="name">{{ item.title }}</h2>
+          <div class="meta">
+            <div class="info">
+              <span class="rating">
+                <link
+                  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,100,1,200"
+                  rel="stylesheet"
+                />
+                <span class="material-symbols-outlined">star</span
+                ><span class="rating-value">{{ item.vote_average }}</span
+                ><span>/10</span></span
+              >
+              <span>{{ item.vote_count }} Reviews</span>
+              <span>{{ item.release_date | date : "yyyy" }}</span>
+            </div>
+          </div>
+          <div class="desc mt-6">
+            {{ item.overview }}
+          </div>
+        </div>
+      </div>
+    </div></ng-container
+  >
+</div>
