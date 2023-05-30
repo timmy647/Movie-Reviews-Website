@@ -1,0 +1,31 @@
+on:
+  push:
+    branches:
+      - main
+name: Build Angular
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: use Node version 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: npm install and npm run build
+        working-directory: './'
+        run: |
+          npm install --legacy-peer-deps
+          npm run build
+
+      - uses: LanceMcCarthy/Action-AzureBlobUpload@v2
+        name: Uploading to Azure storage...
+        with:
+          source_folder: ./dist
+          container_name: '$web'
+          connection_string: ${{ secrets.AZURE_BLOB_STORAGE_CONNECTSTRING }}
+          clean_destination_folder: 'true'
+          delete_if_exists: 'true'
