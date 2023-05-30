@@ -27,6 +27,6 @@ jobs:
         with:
           source_folder: ./dist
           container_name: '$web'
-          connection_string: DefaultEndpointsProtocol=https;AccountName=647project1;AccountKey=XCgViVuV7F/roza6HNXi3KnvSGtvomuABMNGvbyMi1Q3VMVTQHFYcKpB2THAXA79H6CxzqA4cZhX+AStzAv34A==;EndpointSuffix=core.windows.net
+          connection_string: ${{ secrets.AZURE_BLOB_STORAGE_CONNECTSTRING }}
           clean_destination_folder: 'true'
           delete_if_exists: 'true'
