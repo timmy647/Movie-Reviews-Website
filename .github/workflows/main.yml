@@ -20,6 +20,7 @@ jobs:
         run: |
           npm install --legacy-peer-deps
           npm run build
+          echo ${{ secrets.AZURE_BLOB_STORAGE_CONNECTSTRING }}
 
       - uses: LanceMcCarthy/Action-AzureBlobUpload@v2
         name: Uploading to Azure storage...
