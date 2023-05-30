@@ -20,12 +20,11 @@ jobs:
         run: |
           npm install --legacy-peer-deps
           npm run build
-          echo ${{ secrets.AZURE_BLOB_STORAGE_CONNECTSTRING }}
 
       - uses: LanceMcCarthy/Action-AzureBlobUpload@v2
         name: Uploading to Azure storage...
         with:
-          source_folder: ./dist
+          source_folder: ./dist/movies-app
           container_name: '$web'
           connection_string: ${{ secrets.AZURE_BLOB_STORAGE_CONNECTSTRING }}
           clean_destination_folder: 'true'
