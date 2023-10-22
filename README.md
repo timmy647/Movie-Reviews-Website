@@ -1,6 +1,6 @@
 # Movie Review Website
 
-![Movie Review Website](/relative/path/to/movie_review_app.png?raw=true "Screenshot")
+![Movie Review Website](/movie_review_app.png?raw=true "Screenshot")
 
 ## Overview
 
